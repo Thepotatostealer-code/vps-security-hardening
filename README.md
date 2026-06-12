@@ -251,30 +251,23 @@ Running this script teaches you:
 
 After running this script:
 
-1. **Use SSH Keys** - Disable password authentication
-   ```bash
-   sudo nano /etc/ssh/sshd_config
-   # Set: PasswordAuthentication no
-   # Set: PubkeyAuthentication yes
-   ```
-
-2. **Monitor Logs** - Check for attacks
+1. **Monitor Logs** - Check for attacks
    ```bash
    sudo tail -f /var/log/auth.log
    sudo fail2ban-client status sshd
    ```
 
-3. **Keep Updated** - Regular security updates
+2. **Keep Updated** - Regular security updates
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
 
-4. **Use Strong Passwords** - If using password auth
+3. **Use Strong Passwords** - If using password auth
    ```bash
    passwd
    ```
 
-5. **Backup Configs** - Keep backups of configurations
+4. **Backup Configs** - Keep backups of configurations
    ```bash
    sudo cp -r /etc/ssh ~/ssh-backup
    sudo cp -r /etc/fail2ban ~/fail2ban-backup
