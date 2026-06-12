@@ -287,18 +287,6 @@ su -
 - ⚠️ Changes network configuration
 - ⚠️ Restarts SSH service (brief disconnection)
 
----
-
-## 🎓 What You Learned
-
-By running this script, you now understand:
-- ✅ SSH security hardening
-- ✅ Fail2ban brute-force protection
-- ✅ UFW firewall configuration
-- ✅ Linux service management
-- ✅ Security best practices
-
----
 
 ## 🆘 Need Help?
 
