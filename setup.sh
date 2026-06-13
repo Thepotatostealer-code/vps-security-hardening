@@ -63,9 +63,19 @@ FreeBind=yes
 EOF
 echo "Setting up firewall rules..."
 sudo ufw allow $SSH_NEW_PORT/tcp
-sudo ufw enable
+yes | sudo ufw enable
 echo "Restarting SSH service..."
 sudo systemctl restart ssh
 sudo systemctl restart ssh.socket
 systemctl daemon-reload
-echo "SSH port changed to $SSH_NEW_PORT,Firewall setup and Fail2Ban configured successfully."
+echo ""
+echo "=============================="
+echo "Security Hardening Report"
+echo "=============================="
+echo "SSH Port: $SSH_NEW_PORT"
+echo "Fail2ban Max Attempts: $SSH_FAIL_ATTEMPTS"
+echo "Fail2ban Ban Time: $SSH_BAN_TIME seconds"
+echo "SSH Service: $(systemctl is-active ssh)"
+echo "Fail2ban Service: $(systemctl is-active fail2ban)"
+echo "UFW Status: $(sudo ufw status | head -1)"
+echo "=============================="
